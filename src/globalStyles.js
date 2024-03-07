@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
    --background: #eff7f9;
    --black:#0a0b10;
    --purple:#803bec;
+   --green: #4a9f4a;
    --pink:#e5a1f8;
    --white:#fff;
    --nav:#35353f;
@@ -20,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
 }
 html{
-  ${"" /* overflow-y: scroll; */}
+  ${'' /* overflow-y: scroll; */}
   scroll-behavior:smooth;
   
 }
@@ -71,6 +72,6 @@ html{
     }
 
 
-`;
+`
 
 //  /* Colors */

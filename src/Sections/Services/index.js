@@ -1,14 +1,14 @@
-import gsap from "gsap";
-import { useEffect, useRef } from "react";
-import styled from "styled-components";
+import gsap from 'gsap'
+import { useEffect, useRef } from 'react'
+import styled from 'styled-components'
 
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Tube from "../../assets/3dtube.png";
-import Cone from "../../assets/3dtriangle.png";
-import Capsule from "../../assets/3dcapsule.png";
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Tube from '../../assets/3dtube.png'
+import Cone from '../../assets/3dtriangle.png'
+import Capsule from '../../assets/3dcapsule.png'
 
-import TextBlock from "../../components/TextBlock";
-import SvgBlock from "../../components/SvgBlock";
+import TextBlock from '../../components/TextBlock'
+import SvgBlock from '../../components/SvgBlock'
 
 // const TextBlock = lazy(() => import("../../components/TextBlock"));
 // const SvgBlock = lazy(() => import("../../components/SvgBlock"));
@@ -23,7 +23,7 @@ const ServiceSection = styled.section`
   justify-content: center;
   position: relative;
   padding-top: 20rem;
-`;
+`
 
 const Background = styled.div`
   display: flex;
@@ -39,7 +39,7 @@ const Background = styled.div`
   background-color: #0a0b10;
   background-size: auto 100vh;
   background-repeat: no-repeat;
-`;
+`
 
 const Title = styled.h1`
   color: var(--white);
@@ -49,7 +49,7 @@ const Title = styled.h1`
   margin-top: 1rem;
   position: relative;
   &::before {
-    content: "";
+    content: '';
     height: 1px;
     width: 50%;
     position: absolute;
@@ -57,16 +57,16 @@ const Title = styled.h1`
     bottom: 0;
     transform: translate(-50%, 0.5rem);
     /* or 100px */
-    border-bottom: 2px solid var(--pink);
+    border-bottom: 2px solid var(--green);
   }
-`;
+`
 
 const Line = styled.span`
   border-left: 4px solid var(--background);
   height: 15rem;
   margin-top: 2rem;
   border-radius: 20px 20px 0 0;
-`;
+`
 
 const Triangle = styled.span`
   width: 0;
@@ -74,7 +74,7 @@ const Triangle = styled.span`
   border-left: 1.2rem solid transparent;
   border-right: 1.2rem solid transparent;
   border-top: 2rem solid var(--background);
-`;
+`
 
 const Content = styled.div`
   display: flex;
@@ -98,7 +98,7 @@ const Content = styled.div`
       margin-bottom: 1rem;
     }
   }
-`;
+`
 
 const OBJ = styled.div`
   position: absolute;
@@ -113,47 +113,47 @@ const OBJ = styled.div`
   @media only Screen and (max-width: 48em) {
     opacity: 0.5;
   }
-`;
+`
 
 const Services = () => {
-  const ref = useRef(null);
-  gsap.registerPlugin(ScrollTrigger);
-  const revealRefs = useRef([]);
-  revealRefs.current = [];
+  const ref = useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
+  const revealRefs = useRef([])
+  revealRefs.current = []
 
   useEffect(() => {
-    const element = ref.current;
+    const element = ref.current
     ////
-    const mq = window.matchMedia("(max-width: 48em)");
+    const mq = window.matchMedia('(max-width: 48em)')
     const t1 = gsap.timeline({
       scrollTrigger: {
-        trigger: document.getElementById("services"),
+        trigger: document.getElementById('services'),
 
-        start: "top top+=180",
+        start: 'top top+=180',
 
-        end: "bottom bottom",
+        end: 'bottom bottom',
 
         pin: element,
         pinReparent: true,
       },
-    });
+    })
     t1.fromTo(
-      document.getElementById("line"),
+      document.getElementById('line'),
 
       {
-        height: "15rem",
+        height: '15rem',
       },
       {
-        height: "3rem",
+        height: '3rem',
         duration: 2,
         scrollTrigger: {
-          trigger: document.getElementById("line"),
-          start: "top top+=200",
-          end: "bottom top+=220",
+          trigger: document.getElementById('line'),
+          start: 'top top+=200',
+          end: 'bottom top+=220',
           scrub: true,
         },
-      }
-    );
+      },
+    )
 
     revealRefs.current.forEach((el, index) => {
       // console.log(el.childNodes);
@@ -166,29 +166,29 @@ const Services = () => {
             opacity: 0,
             duration: 2,
 
-            ease: "power2",
+            ease: 'power2',
             scrollTrigger: {
               id: `section-${index + 1}`,
               trigger: el,
-              start: "top center+=200",
-              end: "bottom bottom-=100",
+              start: 'top center+=200',
+              end: 'bottom bottom-=100',
               scrub: true,
               snap: true,
               //
               // toggleActions: "play none none reverse",
             },
-          }
+          },
         )
           .to(el.childNodes[1], {
-            transform: "scale(0)",
+            transform: 'scale(0)',
 
-            ease: "power2.inOut",
+            ease: 'power2.inOut',
 
             scrollTrigger: {
               id: `section-${index + 1}`,
               trigger: el.childNodes[1],
-              start: "top center",
-              end: "bottom center",
+              start: 'top center',
+              end: 'bottom center',
               scrub: true,
               snap: true,
 
@@ -203,18 +203,18 @@ const Services = () => {
 
               duration: 2,
 
-              ease: "power2",
+              ease: 'power2',
               scrollTrigger: {
                 id: `section-${index + 1}`,
                 trigger: el,
-                start: "top center+=100",
-                end: "bottom bottom-=200",
+                start: 'top center+=100',
+                end: 'bottom bottom-=200',
                 scrub: true,
                 snap: true,
                 //
                 // toggleActions: "play none none reverse",
               },
-            }
+            },
           )
           .to(
             el,
@@ -222,16 +222,16 @@ const Services = () => {
             {
               opacity: 0,
 
-              ease: "power2",
+              ease: 'power2',
               scrollTrigger: {
                 id: `section-${index + 1}`,
                 trigger: el,
-                start: "top top+=300",
-                end: "center top+=300",
+                start: 'top top+=300',
+                end: 'center top+=300',
                 scrub: true,
               },
-            }
-          );
+            },
+          )
       } else {
         t1.from(
           el.childNodes[0],
@@ -241,29 +241,29 @@ const Services = () => {
             opacity: 0,
             duration: 2,
 
-            ease: "power2",
+            ease: 'power2',
             scrollTrigger: {
               id: `section-${index + 1}`,
               trigger: el,
-              start: "top center+=100",
-              end: "bottom bottom-=200",
+              start: 'top center+=100',
+              end: 'bottom bottom-=200',
               scrub: true,
               snap: true,
               //
               // toggleActions: "play none none reverse",
             },
-          }
+          },
         )
           .to(el.childNodes[1], {
-            transform: "scale(0)",
+            transform: 'scale(0)',
 
-            ease: "power2.inOut",
+            ease: 'power2.inOut',
 
             scrollTrigger: {
               id: `section-${index + 1}`,
               trigger: el.childNodes[1],
-              start: "top center",
-              end: "bottom center",
+              start: 'top center',
+              end: 'bottom center',
               scrub: true,
               snap: true,
 
@@ -278,18 +278,18 @@ const Services = () => {
 
               duration: 2,
 
-              ease: "power2",
+              ease: 'power2',
               scrollTrigger: {
                 id: `section-${index + 1}`,
                 trigger: el,
-                start: "top center+=100",
-                end: "bottom bottom-=200",
+                start: 'top center+=100',
+                end: 'bottom bottom-=200',
                 scrub: true,
                 snap: true,
                 //
                 // toggleActions: "play none none reverse",
               },
-            }
+            },
           )
           .to(
             el,
@@ -297,44 +297,40 @@ const Services = () => {
             {
               opacity: 0,
 
-              ease: "power2",
+              ease: 'power2',
               scrollTrigger: {
                 id: `section-${index + 1}`,
                 trigger: el,
-                start: "top top+=200",
-                end: "center top+=300",
+                start: 'top top+=200',
+                end: 'center top+=300',
                 scrub: true,
               },
-            }
-          );
+            },
+          )
       }
-    });
-  }, []);
-
+    })
+  }, [])
 
   const addToRefs = (el) => {
     if (el && !revealRefs.current.includes(el)) {
-      revealRefs.current.push(el);
+      revealRefs.current.push(el)
     }
-  };
+  }
 
-  
   return (
     <ServiceSection id="services">
       <Background ref={ref}>
-        <Title className="title">What We Do</Title>
+        <Title className="title">Сервис</Title>
         <Line id="line" />
         <Triangle id="triangle" />
       </Background>
 
       <Content ref={addToRefs}>
         <TextBlock
-          topic="Design"
-          title={<h1>We build award winning Designs</h1>}
+          topic="Доставка"
+          title={<h1>Обширная клиентская база</h1>}
           subText={
-            <h5>
-              We help clients to build great design to attract more customers
-            </h5>
+            <h5>Доставляем по всей Ростовской области, Краснодарскому краю и другим регионам</h5>
           }
         />
         <OBJ>
@@ -344,14 +340,9 @@ const Services = () => {
       </Content>
       <Content ref={addToRefs}>
         <TextBlock
-          topic="Develop"
-          title={<h1>We Develope high quality Web & App</h1>}
-          subText={
-            <h5>
-              We build appropriate solution to develope your website & app with
-              best tools available
-            </h5>
-          }
+          topic="Команда"
+          title={<h1>Команда профессионалов</h1>}
+          subText={<h5>Купим, продадим и доставим в кратчайшие сроки</h5>}
         />
         <OBJ>
           <img src={Cone} alt="Cone Object" width="400" height="400" />
@@ -360,15 +351,9 @@ const Services = () => {
       </Content>
       <Content>
         <TextBlock
-          topic="Support"
-          title={<h1>We provide support for your digital presence</h1>}
-          subText={
-            <h5>
-              Once your system is online, we will stay on hand to help you use
-              it and provide technical support and maintenance <br /> your
-              business
-            </h5>
-          }
+          topic="Ассортимент"
+          title={<h1>Широкий ассортимент товаров</h1>}
+          subText={<h5>Продаем мороженое, полуфабрикаты, напитки, кондитерские изделия</h5>}
         />
         <OBJ>
           <img src={Capsule} alt="Capsule Object" width="400" height="400" />
@@ -376,7 +361,7 @@ const Services = () => {
         <SvgBlock svg="Support.svg" />
       </Content>
     </ServiceSection>
-  );
-};
+  )
+}
 
-export default Services;
+export default Services

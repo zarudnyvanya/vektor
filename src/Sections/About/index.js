@@ -1,14 +1,15 @@
-import styled, { keyframes } from "styled-components";
-import wave from "../../assets/waves.svg";
-import rocket from "../../assets/rocket image.png";
-import human from "../../assets/human.svg";
-import hand from "../../assets/hand.svg";
+import styled, { keyframes } from 'styled-components'
+import wave from '../../assets/waves.svg'
+import rocket from '../../assets/rocket image.png'
+import logo from '../../assets/logo_header.png'
+import human from '../../assets/human.svg'
+import hand from '../../assets/hand.svg'
 
 const move = keyframes`
 0% { transform: translateY(-5px)         }
     50% { transform: translateY(10px) translateX(10px)        }
     100% { transform: translateY(-5px)         }
-`;
+`
 
 const AboutSection = styled.section`
   width: 100vw;
@@ -17,13 +18,13 @@ const AboutSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
+`
 const Waves = styled.img`
   width: 100%;
   height: auto;
   position: absolute;
   top: -1rem;
-`;
+`
 const Hand = styled.div`
   position: absolute;
   bottom: -1rem;
@@ -32,7 +33,7 @@ const Hand = styled.div`
   @media only Screen and (max-width: 40em) {
     display: none;
   }
-`;
+`
 
 const Main = styled.div`
   margin: 0 15rem;
@@ -48,20 +49,21 @@ const Main = styled.div`
     align-items: center;
     margin: 3rem calc(3rem + 3vw);
   }
-`;
+`
 
 const Title = styled.h1`
+  margin-top: 20px;
   font-size: 2rem;
   display: inline-block;
-`;
+`
 
 const CurvedLine = styled.div`
   width: 7rem;
   height: 2rem;
-  border: solid 5px var(--purple);
-  border-color: var(--purple) transparent transparent transparent;
+  border: solid 5px var(--green);
+  border-color: var(--green) transparent transparent transparent;
   border-radius: 150%/60px 70px 0 0;
-`;
+`
 
 const Content = styled.div`
   display: flex;
@@ -70,7 +72,7 @@ const Content = styled.div`
   @media only Screen and (max-width: 40em) {
     flex-direction: column;
   }
-`;
+`
 
 const Rocket = styled.div`
   display: flex;
@@ -83,7 +85,7 @@ const Rocket = styled.div`
     width: 50vw;
     padding-bottom: 0;
   }
-`;
+`
 
 const Human = styled.div`
   width: 50%;
@@ -94,12 +96,12 @@ const Human = styled.div`
   @media only Screen and (max-width: 40em) {
     display: none;
   }
-`;
+`
 const Text = styled.h4`
   font-size: calc(0.5rem + 1vw);
   line-height: 1.5;
   color: var(--nav2);
-`;
+`
 const Circle = styled.span`
   display: inline-block;
   width: 1rem;
@@ -108,14 +110,14 @@ const Circle = styled.span`
   background-color: black;
   margin-right: 0.5rem;
   margin-top: 1rem;
-`;
+`
 const AboutText = styled.div`
   width: 50%;
   position: relative;
   @media only Screen and (max-width: 40em) {
     width: 100%;
   }
-`;
+`
 
 const About = () => {
   return (
@@ -126,12 +128,12 @@ const About = () => {
       </Hand>
       <Main>
         <div>
-          <Title>About Us</Title>
+          <Title>О нас</Title>
           <CurvedLine />
         </div>
         <Content>
           <Rocket>
-            <img src={rocket} alt="" width="400" height="400" />
+            <img src={logo} alt="" width="400" height="400" />
           </Rocket>
           <AboutText>
             <Human>
@@ -139,21 +141,20 @@ const About = () => {
             </Human>
 
             <Text>
-              We help our customers to tell about themselves, to grow and stand
-              out in an increasingly competitive digital world, through creative
-              projects that are able to attract and involve, creating strategic
-              value.
+              We help our customers to tell about themselves, to grow and stand out in an
+              increasingly competitive digital world, through creative projects that are able to
+              attract and involve, creating strategic value.
             </Text>
             <div>
-              <Circle style={{ backgroundColor: "var(--purple)" }} />
-              <Circle style={{ backgroundColor: "var(--pink)" }} />
-              <Circle style={{ backgroundColor: "var(--black)" }} />
+              <Circle style={{ backgroundColor: 'var(--green)' }} />
+              <Circle style={{ backgroundColor: 'rgb(199 199 199)' }} />
+              <Circle style={{ backgroundColor: 'var(--black)' }} />
             </div>
           </AboutText>
         </Content>
       </Main>
     </AboutSection>
-  );
-};
+  )
+}
 
-export default About;
+export default About

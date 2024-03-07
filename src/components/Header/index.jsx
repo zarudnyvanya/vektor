@@ -1,8 +1,9 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
-import logo from "../../assets/logo.svg";
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef, useState } from 'react'
+import styled from 'styled-components'
+// import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo_header.png'
 
 const Headers = styled.header`
   display: flex;
@@ -19,18 +20,18 @@ const Headers = styled.header`
   @media only Screen and (max-width: 40em) {
     padding: 0.5rem 1.5rem;
   }
-`;
+`
 
 const Logo = styled.a`
   display: flex;
   align-items: center;
-  width: 2rem;
-  height: auto;
   cursor: pointer;
   img {
     margin-right: 0.5rem;
+    width: 100px;
+    height: 50px;
   }
-`;
+`
 
 const Nav = styled.nav`
   width: 25rem;
@@ -47,7 +48,7 @@ const Nav = styled.nav`
     line-height: 1.5;
     color: var(--white);
     &::after {
-      content: "";
+      content: '';
       display: block;
       height: 3px;
       width: 0;
@@ -56,7 +57,7 @@ const Nav = styled.nav`
     }
     &:not(:last-child):hover::after {
       width: 100%;
-      background: var(--purple);
+      background: var(--green);
     }
     /* &:not(:last-child) {
       margin-right: 2rem;
@@ -67,10 +68,10 @@ const Nav = styled.nav`
       }
     } */
   }
-`;
+`
 
 const Button = styled.button`
-  background-color: var(--purple);
+  background-color: var(--green);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   color: var(--white);
@@ -92,7 +93,7 @@ const Button = styled.button`
       transform: none;
     }
   }
-`;
+`
 const HamburgerBtn = styled.button`
   display: none;
   @media only Screen and (max-width: 48em) {
@@ -107,7 +108,7 @@ const HamburgerBtn = styled.button`
   cursor: pointer;
   &::before,
   &::after {
-    content: "";
+    content: '';
     background-color: var(--white);
     width: 2rem;
     height: 2px;
@@ -119,14 +120,14 @@ const HamburgerBtn = styled.button`
     transition: all 0.3s;
   }
   &::before {
-    top: ${(props) => (props.clicked ? "0" : "-0.5rem")};
-    transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
+    top: ${(props) => (props.clicked ? '0' : '-0.5rem')};
+    transform: ${(props) => (props.clicked ? 'rotate(135deg)' : 'rotate(0)')};
   }
   &::after {
-    top: ${(props) => (props.clicked ? "0" : "0.5rem")};
-    transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
+    top: ${(props) => (props.clicked ? '0' : '0.5rem')};
+    transform: ${(props) => (props.clicked ? 'rotate(-135deg)' : 'rotate(0)')};
   }
-`;
+`
 
 const MobileMenu = styled.nav`
   display: none;
@@ -142,8 +143,8 @@ const MobileMenu = styled.nav`
   top: 100%;
   left: 0;
   right: 0;
-  opacity: ${(props) => (props.clicked ? "1" : 0)};
-  visibility: ${(props) => (props.clicked ? "visible" : "hidden")};
+  opacity: ${(props) => (props.clicked ? '1' : 0)};
+  visibility: ${(props) => (props.clicked ? 'visible' : 'hidden')};
   transition: all 0.5s;
   z-index: -10;
   background-color: rgb(53 53 63 / 95%);
@@ -156,120 +157,120 @@ const MobileMenu = styled.nav`
     margin: 1.5rem;
     cursor: pointer;
   }
-`;
+`
 const Header = () => {
-  const [click, setClick] = useState(false);
+  const [click, setClick] = useState(false)
   //const handleClick = () => setClick(!click);
-  const ref = useRef(null);
+  const ref = useRef(null)
 
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger)
 
   const scrollUp = (id, e) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
+    e.preventDefault()
+    const element = document.getElementById(id)
     element.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-      inline: "nearest",
-    });
-  };
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'nearest',
+    })
+  }
 
   const handleClick = (id, e) => {
-    setClick(!click);
-    scrollUp(id, e);
-  };
+    setClick(!click)
+    scrollUp(id, e)
+  }
 
   useEffect(() => {
-    const element = ref.current;
+    const element = ref.current
 
-    const mq = window.matchMedia("(max-width: 40em)");
+    const mq = window.matchMedia('(max-width: 40em)')
     // console.log("mq", mq);
     if (mq.matches) {
       gsap.to(element, {
-        position: "fixed",
-        top: "0",
-        left: "0",
-        right: "0",
-        padding: "1rem 2.5rem",
+        position: 'static',
+        top: '0',
+        left: '0',
+        right: '0',
+        padding: '1rem 2.5rem',
 
-        borderRadius: "0 0 50px 50px",
+        borderRadius: '0 0 50px 50px',
 
-        border: "2px solid var(--white)",
+        // border: '1px solid var(--white)',
 
         duration: 1,
-        ease: "power1.out",
+        ease: 'power1.out',
 
         scrollTrigger: {
           trigger: element,
-          start: "bottom+=200 top",
-          end: "+=100",
+          start: 'bottom+=200 top',
+          end: '+=100',
           scrub: true,
         },
-      });
+      })
     } else {
       gsap.to(element, {
-        position: "fixed",
-        top: "1rem",
-        left: "3rem",
-        right: "3rem",
-        padding: "1.5rem 2rem",
+        position: 'fixed',
+        top: '1rem',
+        left: '3rem',
+        right: '3rem',
+        padding: '1.5rem 2rem',
 
-        borderRadius: "50px",
+        borderRadius: '50px',
 
-        border: "3px solid var(--white)",
+        // border: '1px solid var(--green)',
 
         duration: 1,
-        ease: "power1.out",
+        ease: 'power1.out',
 
         scrollTrigger: {
           trigger: element,
-          start: "bottom+=300 top",
-          end: "+=250",
+          start: 'bottom+=300 top',
+          end: '+=250',
           scrub: true,
         },
-      });
+      })
     }
-  }, []);
+  }, [])
 
   return (
     <Headers ref={ref}>
       <Logo>
         <img src={logo} alt="CodeBucks" />
-        <h3>CodeBucks</h3>
+        <h3>Вектор вкуса</h3>
       </Logo>
       <Nav>
-        <a href="#home" onClick={(e) => scrollUp("home", e)}>
-          Home
+        <a href="#home" onClick={(e) => scrollUp('home', e)}>
+          Главная
         </a>
-        <a href="#about" onClick={(e) => scrollUp("about", e)}>
-          About Us
+        <a href="#about" onClick={(e) => scrollUp('about', e)}>
+          О нас
         </a>
-        <a href="#services" onClick={(e) => scrollUp("services", e)}>
-          Services
+        <a href="#services" onClick={(e) => scrollUp('services', e)}>
+          Сервис
         </a>
-        <a href="#contact" onClick={(e) => scrollUp("contact", e)}>
-          <Button>Contact Us</Button>
+        <a href="#contact" onClick={(e) => scrollUp('contact', e)}>
+          <Button>Контакты</Button>
         </a>
       </Nav>
       <HamburgerBtn clicked={+click} onClick={() => setClick(!click)}>
         <span></span>
       </HamburgerBtn>
       <MobileMenu clicked={+click}>
-        <a href="#home" onClick={(e) => handleClick("home", e)}>
+        <a href="#home" onClick={(e) => handleClick('home', e)}>
           Home
         </a>
-        <a href="#about" onClick={(e) => handleClick("about", e)}>
+        <a href="#about" onClick={(e) => handleClick('about', e)}>
           About Us
         </a>
-        <a href="#services" onClick={(e) => handleClick("services", e)}>
+        <a href="#services" onClick={(e) => handleClick('services', e)}>
           Services
         </a>
-        <a href="#contact" onClick={(e) => handleClick("contact", e)}>
+        <a href="#contact" onClick={(e) => handleClick('contact', e)}>
           <Button>Contact Us</Button>
         </a>
       </MobileMenu>
     </Headers>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

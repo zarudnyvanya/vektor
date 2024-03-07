@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const CARD = styled.div`
   height: calc(8rem + 12vw);
@@ -11,7 +11,7 @@ const CARD = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const Image = styled.div`
   width: 40%;
@@ -27,24 +27,28 @@ const Image = styled.div`
   background-size: cover;
   background-position: top;
   filter: drop-shadow(0px -3px 3px var(--nav2));
-`;
+`
 
-const TEXT = styled.h4`
+const TEXT = styled.ul`
   color: var(--white);
   padding: 0 calc(1rem + 1vw);
-
-  text-align: center;
+  height: 150px;
+  // text-align: center;
   font-size: calc(0.6rem + 0.5vw);
-`;
+
+  li {
+    margin-bottom: 10px;
+  }
+`
 
 const NAME = styled.h3`
   color: var(--pink);
   padding-top: 1rem;
   font-size: calc(0.5rem + 1vw);
-`;
+`
 
 const Card = ({ name, text, image }) => {
-  const Avatar = require(`../../assets/${image}.jpg`);
+  const Avatar = require(`../../assets/${image}.jpg`)
 
   return (
     <CARD>
@@ -52,7 +56,7 @@ const Card = ({ name, text, image }) => {
       <TEXT>{text}</TEXT>
       <NAME>{name}</NAME>
     </CARD>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

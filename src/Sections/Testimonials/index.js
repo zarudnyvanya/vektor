@@ -1,11 +1,11 @@
-import React, { lazy } from "react";
-import styled from "styled-components";
+import React, { lazy } from 'react'
+import styled from 'styled-components'
 
-import Slider from "react-slick";
-import "../../../node_modules/slick-carousel/slick/slick.css";
-import "../../../node_modules/slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick'
+import '../../../node_modules/slick-carousel/slick/slick.css'
+import '../../../node_modules/slick-carousel/slick/slick-theme.css'
 
-const Card = lazy(() => import("../../components/Card/index"));
+const Card = lazy(() => import('../../components/Card/index'))
 
 const Section = styled.div`
   display: flex;
@@ -14,7 +14,13 @@ const Section = styled.div`
   align-items: center;
   width: 100%;
   padding: 5rem 0;
-`;
+`
+
+const Row = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 40px;
+`
 
 const Title = styled.h1`
   color: #0a0b10;
@@ -23,7 +29,7 @@ const Title = styled.h1`
   margin-top: 1.5rem;
   position: relative;
   &::before {
-    content: "";
+    content: '';
     height: 1px;
     width: 50%;
     position: absolute;
@@ -31,9 +37,9 @@ const Title = styled.h1`
     bottom: 0;
     transform: translate(-50%, 0.5rem);
     /* or 100px */
-    border-bottom: 2px solid var(--purple);
+    border-bottom: 2px solid var(--green);
   }
-`;
+`
 
 const Carousal = styled.div`
   width: 50vw;
@@ -66,7 +72,7 @@ const Carousal = styled.div`
     padding: 0;
     margin-bottom: 3rem;
   }
-`;
+`
 
 const Testimonials = () => {
   const settings = {
@@ -76,21 +82,39 @@ const Testimonials = () => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-  };
+  }
 
   return (
     <Section>
-      <Title>Few good words about us!</Title>
+      <Title>Желаете сотрудничать с нами?</Title>
+      <Row>
+        <Card
+          text={
+            <>
+              <li>Программа и бюджет для продвижения</li>
+              <li>Эксклюзивность на охватываемой территории</li>
+              <li>Конкурентоспособные цены и условия поставок</li>
+            </>
+          }
+          name="Поставщикам"
+          image="avatar-1"
+        />
+
+        <Card
+          text={
+            <>
+              <li>Отсрочка платежа</li>
+              <li>Гибкая система скидок на объём</li>
+              <li>Предоставление морозильного, холодильного и печного оборудования</li>
+            </>
+          }
+          name="Покупателям"
+          image="avatar-1"
+        />
+      </Row>
       <Carousal>
         <Slider {...settings}>
-          <Card
-            text="CodeBucks has been essential part of our business. I would definetly
-        recommend CodeBucks. It has been amazing to have them."
-            name="Jenny (CodeCall)"
-            image="avatar-1"
-          />
-
-          <Card
+          {/* <Card
             text="CodeBucks has been essential part of our business. I would definetly recommend CodeBucks. It has been amazing to have them."
             name="Jenny (CodeCall)"
             image="avatar-2"
@@ -106,11 +130,11 @@ const Testimonials = () => {
             text="CodeBucks has been essential part of our business. I would definetly recommend CodeBucks. It has been amazing to have them."
             name="Jenny (CodeCall)"
             image="avatar-4"
-          />
+          /> */}
         </Slider>
       </Carousal>
     </Section>
-  );
-};
+  )
+}
 
-export default Testimonials;
+export default Testimonials
