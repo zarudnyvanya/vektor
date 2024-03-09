@@ -54,7 +54,10 @@ const PurpleBlob = styled.div`
   position: absolute;
   right: -70px;
   top: -70px;
-  // z-index: 1000;
+  @media (max-width: 1250px) {
+    right: 0px;
+    top: 0px;
+  }
 `
 const WhiteBlob = styled.div`
   width: calc(20% + 20vw);
