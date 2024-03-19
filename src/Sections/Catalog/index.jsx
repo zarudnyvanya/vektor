@@ -52,7 +52,7 @@ const List = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  max-height: 100%;
+  // max-height: 100%;
   // transition: max-height, height, opacity 0.5s ease;
 
   img {
@@ -120,7 +120,7 @@ const Catalog = () => {
                     : {
                         // mixBlendMode: 'multiply',
                         // transition: 'all .5s ease',
-                        // height: '0px',
+                        height: '0px',
                       }
                 }
                 src={company}
