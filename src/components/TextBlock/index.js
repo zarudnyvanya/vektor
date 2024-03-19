@@ -8,7 +8,7 @@ const Lb = styled.div`
 
   width: 60%;
   line-height: 1.5;
-  color: var(--white);
+  color: var(--black);
 
   position: relative;
 

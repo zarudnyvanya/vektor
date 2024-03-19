@@ -36,13 +36,13 @@ const Background = styled.div`
   width: 100vw;
   height: 85vh;
   z-index: -1;
-  background-color: #0a0b10;
+  // background-color: #0a0b10;
   background-size: auto 100vh;
   background-repeat: no-repeat;
 `
 
 const Title = styled.h1`
-  color: var(--white);
+  color: var(--black);
   display: inline-block;
   font-size: 2rem;
   /* margin-top: 4rem; */
@@ -62,7 +62,7 @@ const Title = styled.h1`
 `
 
 const Line = styled.span`
-  border-left: 4px solid var(--background);
+  border-left: 4px solid var(--black);
   height: 15rem;
   margin-top: 2rem;
   border-radius: 20px 20px 0 0;
@@ -73,7 +73,7 @@ const Triangle = styled.span`
   height: 0;
   border-left: 1.2rem solid transparent;
   border-right: 1.2rem solid transparent;
-  border-top: 2rem solid var(--background);
+  border-top: 2rem solid var(--black);
 `
 
 const Content = styled.div`
@@ -128,7 +128,7 @@ const Services = () => {
       scrollTrigger: {
         trigger: document.getElementById('services'),
 
-        start: 'top top+=180',
+        start: 'top top+=200',
 
         end: 'bottom bottom',
 

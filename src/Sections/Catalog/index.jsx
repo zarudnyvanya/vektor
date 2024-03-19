@@ -40,7 +40,7 @@ const companies = [
 const CatalogSection = styled.section`
   width: 100vw;
   padding: calc(2.5rem + 2.5vw) 100px;
-  background-color: #0a0b10;
+  // background-color: #0a0b10;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -66,7 +66,7 @@ const Icon = styled.span`
 `
 
 const Title = styled.h1`
-  color: var(--white);
+  color: var(--black);
   display: inline-block;
   font-size: 2rem;
   margin-bottom: 4rem;
@@ -104,7 +104,7 @@ const Catalog = () => {
             transition: 'all .5s ease',
             transform: `rotate(${isOpen ? '180deg' : '0deg'})`,
           }}
-          color="white"
+          color="black"
         />
       </Title>
 

@@ -122,7 +122,7 @@ const AboutText = styled.div`
 const About = () => {
   return (
     <AboutSection id="about">
-      <Waves src={wave} alt="" />
+      {/* <Waves src={wave} alt="" /> */}
       <Hand>
         <img src={hand} alt="" />
       </Hand>
