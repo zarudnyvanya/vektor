@@ -87,6 +87,10 @@ const NAME = styled.h3`
   @media (min-width: 810px) and (max-width: 1350px) {
     padding-top: 2rem;
   }
+
+  @media (min-width: 2200px) {
+    padding-top: 7rem;
+  }
 `
 
 const Card = ({ name, text, image }) => {

@@ -53,11 +53,12 @@ const List = styled.div`
   flex-wrap: wrap;
   gap: 40px;
   max-height: 100%;
-  transition: all 0.5s ease;
+  // transition: max-height, height, opacity 0.5s ease;
 
   img {
     width: 200px;
     height: 200px;
+    mix-blend-mode: multiply;
   }
 `
 
@@ -113,7 +114,15 @@ const Catalog = () => {
           return (
             <a href="#">
               <img
-                style={isOpen ? {} : { transition: 'all .5s ease', height: '0px' }}
+                style={
+                  isOpen
+                    ? {}
+                    : {
+                        // mixBlendMode: 'multiply',
+                        // transition: 'all .5s ease',
+                        // height: '0px',
+                      }
+                }
                 src={company}
                 alt="company"
               />

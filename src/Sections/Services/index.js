@@ -332,9 +332,7 @@ const Services = () => {
             <h5>Доставляем по всей Ростовской области, Краснодарскому краю и другим регионам</h5>
           }
         />
-        <OBJ>
-          <img src={Tube} alt="Tube Object" width="400" height="400" />
-        </OBJ>
+        <OBJ>{/* <img src={Tube} alt="Tube Object" width="400" height="400" /> */}</OBJ>
         <SvgBlock svg="Design.svg" />
       </Content>
       <Content ref={addToRefs}>
@@ -343,9 +341,7 @@ const Services = () => {
           title={<h1>Команда профессионалов</h1>}
           subText={<h5>Купим, продадим и доставим в кратчайшие сроки</h5>}
         />
-        <OBJ>
-          <img src={Cone} alt="Cone Object" width="400" height="400" />
-        </OBJ>
+        <OBJ>{/* <img src={Cone} alt="Cone Object" width="400" height="400" /> */}</OBJ>
         <SvgBlock svg="Develope.svg" />
       </Content>
       <Content>
@@ -354,9 +350,7 @@ const Services = () => {
           title={<h1>Широкий ассортимент товаров</h1>}
           subText={<h5>Продаем мороженое, полуфабрикаты, напитки, кондитерские изделия</h5>}
         />
-        <OBJ>
-          <img src={Capsule} alt="Capsule Object" width="400" height="400" />
-        </OBJ>
+        <OBJ>{/* <img src={Capsule} alt="Capsule Object" width="400" height="400" /> */}</OBJ>
         <SvgBlock svg="Support.svg" />
       </Content>
     </ServiceSection>
