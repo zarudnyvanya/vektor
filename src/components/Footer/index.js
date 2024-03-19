@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import Twitter from "../../assets/twitter-square-brands.svg";
-import Instagram from "../../assets/instagram-square-brands.svg";
-import Gmail from "../../assets/envelope-open-solid.svg";
+import styled from 'styled-components'
+import Twitter from '../../assets/twitter-square-brands.svg'
+import Instagram from '../../assets/instagram-square-brands.svg'
+import Gmail from '../../assets/envelope-open-solid.svg'
 
 const FOOTER = styled.footer`
   padding: 1.2rem calc(2.5rem + 2.5vw);
@@ -18,7 +18,7 @@ const FOOTER = styled.footer`
       }
     }
   }
-`;
+`
 
 const RightText = styled.div`
   display: flex;
@@ -34,25 +34,20 @@ const RightText = styled.div`
     &:hover {
       img {
         transform: scale(1.5);
-        filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(216deg)
-          brightness(100%) contrast(97%);
+        filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(216deg) brightness(100%)
+          contrast(97%);
       }
     }
   }
-`;
+`
 const LeftText = styled.div`
   text-align: left;
-`;
+`
 const Footer = () => {
   return (
     <FOOTER>
-      <LeftText>
-        © 2021 Built and Design by{" "}
-        <a href="https://www.youtube.com/channel/UCeYt6blRBKuNrEg_-282fSA">
-          @CodeBucks
-        </a>
-      </LeftText>
-      <RightText>
+      <LeftText>© 2024 ООО "Вектор" </LeftText>
+      {/* <RightText>
         Reach out to me via 😉
         <a href="https://twitter.com/code_bucks">
           <img src={Twitter} alt="Twitter" />
@@ -65,11 +60,11 @@ const Footer = () => {
         <a href="mailto:codebucks27@gmail.com?subject=Email From Your Website">
           <img src={Gmail} alt="Gmail" />
         </a>
-      </RightText>
+      </RightText> */}
     </FOOTER>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
 
 //© 2021 by CodeBucks. Design by @CodeBucks.

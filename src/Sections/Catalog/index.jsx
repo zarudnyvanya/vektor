@@ -18,7 +18,6 @@ import { IoIosArrowDown } from 'react-icons/io'
 
 import styled from 'styled-components'
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const companies = [
   elica,
@@ -53,11 +52,12 @@ const List = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  max-height: 4000px;
+  max-height: 100%;
   transition: all 0.5s ease;
+
   img {
     width: 200px;
-    height: 160px;
+    height: 200px;
   }
 `
 
@@ -108,11 +108,15 @@ const Catalog = () => {
         />
       </Title>
 
-      <List style={isOpen ? { display: 'flex' } : { opacity: 0, maxHeight: 0 }}>
+      <List style={isOpen ? { display: 'flex' } : { opacity: 0, maxHeight: '0px' }}>
         {companies.map((company) => {
           return (
             <a href="#">
-              <img src={company} alt="company" />
+              <img
+                style={isOpen ? {} : { transition: 'all .5s ease', height: '0px' }}
+                src={company}
+                alt="company"
+              />
             </a>
           )
         })}

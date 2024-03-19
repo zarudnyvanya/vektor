@@ -123,7 +123,6 @@ const Services = () => {
 
   useEffect(() => {
     const element = ref.current
-    ////
     const mq = window.matchMedia('(max-width: 48em)')
     const t1 = gsap.timeline({
       scrollTrigger: {
