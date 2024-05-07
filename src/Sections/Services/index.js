@@ -329,7 +329,7 @@ const Services = () => {
           topic="Доставка"
           title={<h1>Обширная клиентская база</h1>}
           subText={
-            <ul style={{ maxWidth: '80%', marginLeft: 20 }}>
+            <ul style={{ maxWidth: '80%' }}>
               <li style={{ marginBottom: 10 }}>У нас большой ассортимент продуктов и товаров.</li>
               <li style={{ marginBottom: 10 }}>
                 Вы можете приобрести замороженные полуфабрикаты по выгодной цене.

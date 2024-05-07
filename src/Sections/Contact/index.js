@@ -42,7 +42,12 @@ const Row = styled.div`
   }
 
   @media screen and (min-width: 2000px) {
-    margin-left: 44%;
+    margin-left: 38%;
+    font-size: 10px;
+  }
+
+  @media screen and (min-width: 3600px) {
+    margin-left: 42%;
     font-size: 10px;
   }
 
