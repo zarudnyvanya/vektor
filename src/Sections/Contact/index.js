@@ -31,8 +31,6 @@ const Title = styled.h1`
 const Row = styled.div`
   display: flex;
   align-items: center;
-  // justify-content: center;
-  // text-align: center;
   margin-left: 33%;
   gap: 10px;
   margin-bottom: 10px;
@@ -54,6 +52,22 @@ const Row = styled.div`
 
     @media screen and (max-width: 768px) {
       font-size: 20px;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 18px;
+    }
+  }
+
+  p {
+    font-size: 24px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 12px;
     }
   }
 `
@@ -77,7 +91,9 @@ const Contact = () => {
           <a href="mail:vektor-sb@ya.ru">vektor-sb@ya.ru</a>
         </Row>
 
-        <Row>Фактический адрес: г. Ростов-на-Дону, пер. Изыскательский, 5Б</Row>
+        <Row>
+          <p>Фактический адрес: г. Ростов-на-Дону, пер. Изыскательский, 5Б</p>
+        </Row>
       </div>
 
       <div

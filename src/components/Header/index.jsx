@@ -266,16 +266,17 @@ const Header = () => {
           </HamburgerBtn>
           <MobileMenu clicked={+click}>
             <a href="#home" onClick={(e) => handleClick('home', e)}>
-              Home
+              Главная
             </a>
             <a href="#about" onClick={(e) => handleClick('about', e)}>
-              About Us
+              О нас
             </a>
             <a href="#services" onClick={(e) => handleClick('services', e)}>
-              Services
+              Сервис
             </a>
+            <Link to={'/catalog'}>Каталог</Link>
             <a href="#contact" onClick={(e) => handleClick('contact', e)}>
-              <Button>Contact Us</Button>
+              <Button>Контакты</Button>
             </a>
           </MobileMenu>
         </>

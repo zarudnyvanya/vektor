@@ -15,7 +15,7 @@ const Lb = styled.div`
   @media only Screen and (max-width: 48em) {
     width: 100%;
     align-items: center;
-    text-align: center;
+    // text-align: center;
   }
   /* z-index: 1; */
 `
