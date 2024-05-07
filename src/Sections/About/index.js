@@ -98,9 +98,10 @@ const Human = styled.div`
   }
 `
 const Text = styled.h4`
-  font-size: calc(0.5rem + 1vw);
+  font-size: calc(0.3rem + 1vw);
   line-height: 1.5;
   color: var(--nav2);
+  margin-bottom: 10px;
 `
 const Circle = styled.span`
   display: inline-block;
@@ -141,9 +142,13 @@ const About = () => {
             </Human>
 
             <Text>
-              We help our customers to tell about themselves, to grow and stand out in an
-              increasingly competitive digital world, through creative projects that are able to
-              attract and involve, creating strategic value.
+              Мы занимаемся дистрибьюцией продуктов питания с 2009 года. Специализируемся на
+              поставке высококачественных продуктов, без химических добавок и усилителей вкуса.
+            </Text>
+            <Text>На текущем этапе — активно развиваемся по всей территории РФ.</Text>
+            <Text>
+              У нас собственные система логистики, отдел продаж традиционной розницы, склады и
+              автопарк.
             </Text>
             <div>
               <Circle style={{ backgroundColor: 'var(--green)' }} />

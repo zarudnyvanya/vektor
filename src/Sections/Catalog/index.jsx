@@ -20,21 +20,70 @@ import styled from 'styled-components'
 import { useState } from 'react'
 
 const companies = [
-  elica,
-  ceasar,
-  chernogolovka,
-  frutmotiv,
-  negresko,
-  rusko,
-  holod,
-  shinline,
-  corova,
-  vek,
-  hladonezh,
-  pechagin,
-  tchibo,
-  pechenyush,
-  alidan,
+  {
+    link: 'https://www.auchan.ru/',
+    img: elica,
+  },
+  {
+    link: 'https://pkm-group.ru/brands/caesar/',
+    img: ceasar,
+  },
+  {
+    link: 'https://chernogolovka.com/',
+    img: chernogolovka,
+  },
+  {
+    link: 'https://www.liprosinka.ru/',
+    img: frutmotiv,
+  },
+  {
+    link: '#',
+    img: negresko,
+  },
+
+  {
+    link: '#',
+    img: rusko,
+  },
+  {
+    link: '#',
+    img: holod,
+  },
+  {
+    link: 'https://www.shin-line.com/ru/',
+    img: shinline,
+  },
+  {
+    link: 'https://hlado.ru/',
+    img: corova,
+  },
+
+  {
+    link: '#',
+    img: vek,
+  },
+
+  {
+    link: 'http://xn--80aidevog6c.xn--p1ai/index.php/kontakty/o-kompanii',
+    img: hladonezh,
+  },
+  {
+    link: 'https://pechagin.group/',
+    img: pechagin,
+  },
+  {
+    link: '#',
+    img: tchibo,
+  },
+
+  {
+    link: 'https://goodcookies.ru/',
+    img: pechenyush,
+  },
+  {
+    link: 'https://alidanfood.ru/',
+    img: alidan,
+  },
 ]
 
 const CatalogSection = styled.section`
@@ -112,18 +161,16 @@ const Catalog = () => {
       <List style={isOpen ? { display: 'flex' } : { opacity: 0, maxHeight: '0px' }}>
         {companies.map((company) => {
           return (
-            <a href="#">
+            <a target="_blank" href={company.link}>
               <img
                 style={
                   isOpen
                     ? {}
                     : {
-                        // mixBlendMode: 'multiply',
-                        // transition: 'all .5s ease',
                         height: '0px',
                       }
                 }
-                src={company}
+                src={company.img}
                 alt="company"
               />
             </a>

@@ -29,8 +29,8 @@ const CARD = styled.div`
 `
 
 const Image = styled.div`
-  width: 34%;
-  height: 34%;
+  width: 100px;
+  height: 100px;
   position: absolute;
   left: 50%;
   bottom: 80%;
@@ -42,6 +42,10 @@ const Image = styled.div`
   background-size: cover;
   // background-position: top;
   filter: drop-shadow(0px -3px 3px var(--green));
+
+  @media (min-width: 2200px) {
+    bottom: 88%;
+  }
 `
 
 const TEXT = styled.ul`
@@ -89,7 +93,7 @@ const NAME = styled.h3`
   }
 
   @media (min-width: 2200px) {
-    padding-top: 7rem;
+    padding-top: 12rem;
   }
 `
 

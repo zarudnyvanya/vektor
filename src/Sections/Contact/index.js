@@ -31,14 +31,23 @@ const Title = styled.h1`
 const Row = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
+  // text-align: center;
+  margin-left: 33%;
   gap: 10px;
   margin-bottom: 10px;
   font-size: 20px;
 
   @media screen and (max-width: 768px) {
+    margin-left: 20%;
     font-size: 10px;
   }
+
+  @media screen and (min-width: 2000px) {
+    margin-left: 44%;
+    font-size: 10px;
+  }
+
   a {
     color: #01681f;
     font-size: 30px;
@@ -54,20 +63,22 @@ const Contact = () => {
     <ContactSection style={{ width: '100%' }} id="contact">
       <Title>Контакты</Title>
 
-      <Row>
-        <a href="tel:88632850569">8 (863) 285-05-69 </a>
-        <p>- многоканальный офис</p>
-      </Row>
-      <Row>
-        <a href="tel:88632800508">8 (863) 280-05-08 </a>
-        <p>- бухгалтерия, факс</p>
-      </Row>
-      <Row>
-        <p>Электронный адрес:</p>
-        <a href="mail:vektor-sb@ya.ru">vektor-sb@ya.ru</a>
-      </Row>
+      <div style={{}}>
+        <Row>
+          <a href="tel:88632850569">8 (863) 285-05-69 </a>
+          <p>- многоканальный офис</p>
+        </Row>
+        <Row>
+          <a href="tel:88632800508">8 (863) 280-05-08 </a>
+          <p>- бухгалтерия, факс</p>
+        </Row>
+        <Row>
+          <p>Электронный адрес:</p>
+          <a href="mail:vektor-sb@ya.ru">vektor-sb@ya.ru</a>
+        </Row>
 
-      <Row>Фактический адрес: г. Ростов-на-Дону, пер. Изыскательский, 5Б</Row>
+        <Row>Фактический адрес: г. Ростов-на-Дону, пер. Изыскательский, 5Б</Row>
+      </div>
 
       <div
         style={{ width: '100%', padding: '20px 60px' }}

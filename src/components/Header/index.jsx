@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 // import logo from '../../assets/logo.svg'
 import logo from '../../assets/logo_header.png'
+import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const Headers = styled.header`
   display: flex;
@@ -22,7 +24,7 @@ const Headers = styled.header`
   }
 `
 
-const Logo = styled.a`
+const Logo = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -232,43 +234,52 @@ const Header = () => {
     }
   }, [])
 
+  let location = useLocation()
+
   return (
     <Headers ref={ref}>
-      <Logo>
-        <img src={logo} alt="CodeBucks" />
-        <h3>Вектор вкуса</h3>
-      </Logo>
-      <Nav>
-        <a href="#home" onClick={(e) => scrollUp('home', e)}>
-          Главная
-        </a>
-        <a href="#about" onClick={(e) => scrollUp('about', e)}>
-          О нас
-        </a>
-        <a href="#services" onClick={(e) => scrollUp('services', e)}>
-          Сервис
-        </a>
-        <a href="#contact" onClick={(e) => scrollUp('contact', e)}>
-          <Button>Контакты</Button>
-        </a>
-      </Nav>
-      <HamburgerBtn clicked={+click} onClick={() => setClick(!click)}>
-        <span></span>
-      </HamburgerBtn>
-      <MobileMenu clicked={+click}>
-        <a href="#home" onClick={(e) => handleClick('home', e)}>
-          Home
-        </a>
-        <a href="#about" onClick={(e) => handleClick('about', e)}>
-          About Us
-        </a>
-        <a href="#services" onClick={(e) => handleClick('services', e)}>
-          Services
-        </a>
-        <a href="#contact" onClick={(e) => handleClick('contact', e)}>
-          <Button>Contact Us</Button>
-        </a>
-      </MobileMenu>
+      <Link to={'/'}>
+        <Logo>
+          <img src={logo} alt="CodeBucks" />
+          <h3 style={{ color: '#fff' }}>Вектор вкуса</h3>
+        </Logo>
+      </Link>
+      {location.pathname === '/' && (
+        <>
+          <Nav>
+            <a href="#home" onClick={(e) => scrollUp('home', e)}>
+              Главная
+            </a>
+            <a href="#about" onClick={(e) => scrollUp('about', e)}>
+              О нас
+            </a>
+            <a href="#services" onClick={(e) => scrollUp('services', e)}>
+              Сервис
+            </a>
+            <Link to={'/catalog'}>Каталог</Link>
+            <a href="#contact" onClick={(e) => scrollUp('contact', e)}>
+              <Button>Контакты</Button>
+            </a>
+          </Nav>
+          <HamburgerBtn clicked={+click} onClick={() => setClick(!click)}>
+            <span></span>
+          </HamburgerBtn>
+          <MobileMenu clicked={+click}>
+            <a href="#home" onClick={(e) => handleClick('home', e)}>
+              Home
+            </a>
+            <a href="#about" onClick={(e) => handleClick('about', e)}>
+              About Us
+            </a>
+            <a href="#services" onClick={(e) => handleClick('services', e)}>
+              Services
+            </a>
+            <a href="#contact" onClick={(e) => handleClick('contact', e)}>
+              <Button>Contact Us</Button>
+            </a>
+          </MobileMenu>
+        </>
+      )}
     </Headers>
   )
 }
