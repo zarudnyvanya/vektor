@@ -1,9 +1,9 @@
-import SvgIcon from "../../assets/arrow-up.svg";
+import SvgIcon from '../../assets/arrow-up.svg'
 
-import styled from "styled-components";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import styled from 'styled-components'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export const Up = styled.div`
   box-sizing: border-box;
@@ -38,38 +38,38 @@ export const Up = styled.div`
       transform: scale(0.9);
     }
   }
-`;
+`
 
 const ScrollToTop = () => {
-  const ref = useRef(null);
-  gsap.registerPlugin(ScrollTrigger);
+  const ref = useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
 
   const scrollUp = () => {
-    const element = document.getElementById("home");
+    const element = document.getElementById('home')
     element.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-      inline: "nearest",
-    });
-  };
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'nearest',
+    })
+  }
 
   useEffect(() => {
-    const element = ref.current;
+    const element = ref.current
     gsap.to(element, {
-      display: "block",
+      display: 'block',
       scrollTrigger: {
         trigger: element,
-        start: "top top",
+        start: 'top top',
         scrub: true,
       },
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <Up onClick={scrollUp}>
       <img ref={ref} src={SvgIcon} alt="to top" />
     </Up>
-  );
-};
+  )
+}
 
-export default ScrollToTop;
+export default ScrollToTop

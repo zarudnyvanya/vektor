@@ -1,6 +1,7 @@
 import { GlobalStyle } from './globalStyles'
 import { lazy, Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Food from './components/Food'
 
 const Home = lazy(() => import('./Pages/Home'))
 const Header = lazy(() => import('./components/Header/index'))
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
       <>
         <Header />
         <Home />
+        <ScrollToTop />
       </>
     ),
   },
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Header />
-        catalog
+        <Food />
       </>
     ),
   },
@@ -33,8 +35,6 @@ function App() {
     <>
       <Suspense fallback={null}>
         <GlobalStyle />
-
-        <ScrollToTop />
 
         <RouterProvider router={router} />
 

@@ -1,13 +1,8 @@
-// This is HeroSection component, Main top section of website
-
 import styled, { keyframes } from 'styled-components'
 
-import pinkBlob from '../../assets/blobPink.png'
 import greenBlob from '../../assets/blob_green.png'
-import purpleBlob from '../../assets/blob purple.png'
 import whiteBlob from '../../assets/blob white.png'
-import arrow from '../../assets/Arrow Right.svg'
-// import Mobile from '../../assets/mobile.svg'
+
 import Mobile from '../../assets/logo_header.png'
 
 const move = keyframes`
