@@ -206,6 +206,14 @@ const FoodImage = styled.img`
   max-height: 200px;
   border-radius: 5px;
   object-fit: cover;
+  transform: scale(1);
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.5);
+    transition: all 0.5s;
+    cursor: pointer;
+  }
 `
 const ImgName = styled.p`
   margin-top: 10px;
@@ -224,7 +232,9 @@ const Food = () => {
               {obj.category.map((food) => {
                 return (
                   <div style={{ width: 300 }}>
-                    <FoodImage src={food.img} alt="Еда" />
+                    <div style={{ height: 200, overflow: 'hidden' }}>
+                      <FoodImage loading="lazy" src={food.img} alt="Еда" />
+                    </div>
                     <ImgName>{food.name}</ImgName>
                   </div>
                 )
