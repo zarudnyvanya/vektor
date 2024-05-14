@@ -2,155 +2,196 @@ import styled from 'styled-components'
 import { ProgressiveImage } from '../ProgressiveImage'
 import placeholderImageSrc from './../../assets/imagePlaceholder.jpg'
 
+import burger1 from './../../assets/food/Гамбургер с говяжьей котлетой (1).jpg'
+import burger2 from './../../assets/food/Гамбургер с говяжьей котлетой (2).jpg'
+import burger3 from './../../assets/food/Гамбургер с говяжьей котлетой (3).jpg'
+import burger4 from './../../assets/food/Гамбургер с говяжьей котлетой (4).jpg'
+import burger5 from './../../assets/food/Гамбургер с говяжьей котлетой (5).jpg'
+import burger6 from './../../assets/food/Гамбургер с говяжьей котлетой (6).jpg'
+
+import pizzaMeat1 from './../../assets/food/Пицца мясное ассорти с шампиньонами (1).jpg'
+import pizzaMeat2 from './../../assets/food/Пицца мясное ассорти с шампиньонами (2).jpg'
+import pizzaMeat3 from './../../assets/food/Пицца мясное ассорти с шампиньонами (3).jpg'
+import pizzaMeat4 from './../../assets/food/Пицца мясное ассорти с шампиньонами (4).jpg'
+import pizzaMeat5 from './../../assets/food/Пицца мясное ассорти с шампиньонами (5).jpg'
+import pizzaMeat6 from './../../assets/food/Пицца мясное ассорти с шампиньонами (6).jpg'
+
+import pizzaFile1 from './../../assets/food/Пицца с куриным филе и шампиньонами (1).jpg'
+import pizzaFile2 from './../../assets/food/Пицца с куриным филе и шампиньонами (2).jpg'
+import pizzaFile3 from './../../assets/food/Пицца с куриным филе и шампиньонами (3).jpg'
+import pizzaFile4 from './../../assets/food/Пицца с куриным филе и шампиньонами (4).jpg'
+import pizzaFile5 from './../../assets/food/Пицца с куриным филе и шампиньонами (5).jpg'
+import pizzaFile6 from './../../assets/food/Пицца с куриным филе и шампиньонами (6).jpg'
+
+import pizzaKur1 from './../../assets/food/Пицца с курицей и грибами (1).jpg'
+import pizzaKur2 from './../../assets/food/Пицца с курицей и грибами (2).jpg'
+import pizzaKur3 from './../../assets/food/Пицца с курицей и грибами (3).jpg'
+import pizzaKur4 from './../../assets/food/Пицца с курицей и грибами (4).jpg'
+import pizzaKur5 from './../../assets/food/Пицца с курицей и грибами (5).jpg'
+import pizzaKur6 from './../../assets/food/Пицца с курицей и грибами (6).jpg'
+
+import varenik1 from './../../assets/food/Вареники с творогом (1).jpg'
+import varenik2 from './../../assets/food/Вареники с творогом (2).jpg'
+import varenik3 from './../../assets/food/Вареники с творогом (3).jpg'
+
+import kebab1 from './../../assets/food/Люля-кебаб (1).jpg'
+import kebab2 from './../../assets/food/Люля-кебаб (2).jpg'
+import kebab3 from './../../assets/food/Люля-кебаб (3).jpg'
+import kebab4 from './../../assets/food/Люля-кебаб (4).jpg'
+import kebab5 from './../../assets/food/Люля-кебаб (5).jpg'
+import kebab6 from './../../assets/food/Люля-кебаб (6).jpg'
+import kebab7 from './../../assets/food/Люля-кебаб (7).jpg'
+import kebab8 from './../../assets/food/Люля-кебаб (8).jpg'
+
 const burgersList = [
   {
     name: 'Гамбургер с говяжьей котлетой (1)',
-    img: './Гамбургер с говяжьей котлетой (1).jpg',
+    img: burger1,
   },
   {
     name: 'Гамбургер с говяжьей котлетой (2)',
-    img: './Гамбургер с говяжьей котлетой (2).jpg',
+    img: burger2,
   },
   {
     name: 'Гамбургер с говяжьей котлетой (3)',
-    img: './Гамбургер с говяжьей котлетой (3).jpg',
+    img: burger3,
   },
   {
     name: 'Гамбургер с говяжьей котлетой (4)',
-    img: './Гамбургер с говяжьей котлетой (4).jpg',
+    img: burger4,
   },
   {
     name: 'Гамбургер с говяжьей котлетой (5)',
-    img: './Гамбургер с говяжьей котлетой (5).jpg',
+    img: burger5,
   },
   {
     name: 'Гамбургер с говяжьей котлетой (6)',
-    img: './Гамбургер с говяжьей котлетой (6).jpg',
+    img: burger6,
   },
 ]
 
 const pizzasList = [
   {
     name: 'Пицца мясное ассорти с шампиньонами (1)',
-    img: './Пицца мясное ассорти с шампиньонами (1).jpg',
+    img: pizzaMeat1,
   },
   {
     name: 'Пицца мясное ассорти с шампиньонами (2)',
-    img: './Пицца мясное ассорти с шампиньонами (2).jpg',
+    img: pizzaMeat2,
   },
   {
     name: 'Пицца мясное ассорти с шампиньонами (3)',
-    img: './Пицца мясное ассорти с шампиньонами (3).jpg',
+    img: pizzaMeat3,
   },
   {
     name: 'Пицца мясное ассорти с шампиньонами (4)',
-    img: './Пицца мясное ассорти с шампиньонами (4).jpg',
+    img: pizzaMeat4,
   },
   {
     name: 'Пицца мясное ассорти с шампиньонами (5)',
-    img: './Пицца мясное ассорти с шампиньонами (5).jpg',
+    img: pizzaMeat5,
   },
   {
     name: 'Пицца мясное ассорти с шампиньонами (6)',
-    img: './Пицца мясное ассорти с шампиньонами (6).jpg',
+    img: pizzaMeat6,
   },
   {
     name: 'Пицца с куриным филе и шампиньонами (1)',
-    img: './Пицца с куриным филе и шампиньонами (1).jpg',
+    img: pizzaFile1,
   },
   {
     name: 'Пицца с куриным филе и шампиньонами (2)',
-    img: './Пицца с куриным филе и шампиньонами (2).jpg',
+    img: pizzaFile2,
   },
   {
     name: 'Пицца с куриным филе и шампиньонами (3)',
-    img: './Пицца с куриным филе и шампиньонами (3).jpg',
+    img: pizzaFile3,
   },
   {
     name: 'Пицца с куриным филе и шампиньонами (4)',
-    img: './Пицца с куриным филе и шампиньонами (4).jpg',
+    img: pizzaFile4,
   },
   {
     name: 'Пицца с куриным филе и шампиньонами (5)',
-    img: './Пицца с куриным филе и шампиньонами (5).jpg',
+    img: pizzaFile5,
   },
   {
     name: 'Пицца с куриным филе и шампиньонами (6)',
-    img: './Пицца с куриным филе и шампиньонами (6).jpg',
+    img: pizzaFile6,
   },
   {
     name: 'Пицца с курицей и грибами (1)',
-    img: './Пицца с курицей и грибами (1).jpg',
+    img: pizzaKur1,
   },
   {
     name: 'Пицца с курицей и грибами (2)',
-    img: './Пицца с курицей и грибами (2).jpg',
+    img: pizzaKur2,
   },
   {
     name: 'Пицца с курицей и грибами (3)',
-    img: './Пицца с курицей и грибами (3).jpg',
+    img: pizzaKur3,
   },
   {
     name: 'Пицца с курицей и грибами (4)',
-    img: './Пицца с курицей и грибами (4).jpg',
+    img: pizzaKur4,
   },
   {
     name: 'Пицца с курицей и грибами (5)',
-    img: './Пицца с курицей и грибами (5).jpg',
+    img: pizzaKur5,
   },
   {
     name: 'Пицца с курицей и грибами (6)',
-    img: './Пицца с курицей и грибами (6).jpg',
+    img: pizzaKur6,
   },
 ]
 
 const varenikiList = [
   {
     name: 'Вареники с творогом (1)',
-    img: './Вареники с творогом (1).jpg',
+    img: varenik1,
   },
   {
     name: 'Вареники с творогом (2)',
-    img: './Вареники с творогом (2).jpg',
+    img: varenik2,
   },
   {
     name: 'Вареники с творогом (3)',
-    img: './Вареники с творогом (3).jpg',
+    img: varenik3,
   },
 ]
 
 const meatsList = [
   {
     name: 'Люля-кебаб (1)',
-    img: './Люля-кебаб (1).jpg',
+    img: kebab1,
   },
   {
     name: 'Люля-кебаб (2)',
-    img: './Люля-кебаб (2).jpg',
+    img: kebab2,
   },
   {
     name: 'Люля-кебаб (3)',
-    img: './Люля-кебаб (3).jpg',
+    img: kebab3,
   },
   {
     name: 'Люля-кебаб (4)',
-    img: './Люля-кебаб (4).jpg',
+    img: kebab4,
   },
   {
     name: 'Люля-кебаб (5)',
-    img: './Люля-кебаб (5).jpg',
+    img: kebab5,
   },
   {
     name: 'Люля-кебаб (6)',
-    img: './Люля-кебаб (6).jpg',
+    img: kebab6,
   },
   {
     name: 'Люля-кебаб (7)',
-    img: './Люля-кебаб (7).jpg',
+    img: kebab7,
   },
   {
     name: 'Люля-кебаб (8)',
-    img: './Люля-кебаб (8).jpg',
+    img: kebab8,
   },
 ]
 
