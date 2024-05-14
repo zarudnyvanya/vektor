@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 const FoodImage = styled.img`
   display: block;
-  max-width: 100%;
-  max-height: 200px;
+  width: 300px;
+  height: 200px;
   border-radius: 5px;
   object-fit: cover;
   transform: scale(1);
@@ -26,13 +26,17 @@ export const ProgressiveImage = ({ src, placeholderSrc, loading, alt }) => {
     img.onload = () => {
       setImageSrc(src)
     }
-  }, [src])
+  }, [])
 
   return (
     <FoodImage
-      style={imageSrc === placeholderSrc ? { filter: 'blur(10px)' } : { filter: 'blur(0)' }}
-      loading={loading}
+      style={
+        imageSrc === placeholderSrc
+          ? { filter: 'blur(10px)', width: 300, height: 200 }
+          : { filter: 'blur(0)', width: 300, height: 200 }
+      }
       src={imageSrc}
+      loading={loading}
       alt={alt}
     />
   )
