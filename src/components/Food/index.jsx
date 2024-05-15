@@ -44,7 +44,7 @@ import kebab7 from './../../assets/food/Люля-кебаб (7).jpg'
 import kebab8 from './../../assets/food/Люля-кебаб (8).jpg'
 import { useState } from 'react'
 
-const burgersList = [
+const burgersGovyadinaList = [
   {
     name: 'Гамбургер с говяжьей котлетой (1)',
     img: burger1,
@@ -71,31 +71,7 @@ const burgersList = [
   },
 ]
 
-const pizzasList = [
-  {
-    name: 'Пицца мясное ассорти с шампиньонами (1)',
-    img: pizzaMeat1,
-  },
-  {
-    name: 'Пицца мясное ассорти с шампиньонами (2)',
-    img: pizzaMeat2,
-  },
-  {
-    name: 'Пицца мясное ассорти с шампиньонами (3)',
-    img: pizzaMeat3,
-  },
-  {
-    name: 'Пицца мясное ассорти с шампиньонами (4)',
-    img: pizzaMeat4,
-  },
-  {
-    name: 'Пицца мясное ассорти с шампиньонами (5)',
-    img: pizzaMeat5,
-  },
-  {
-    name: 'Пицца мясное ассорти с шампиньонами (6)',
-    img: pizzaMeat6,
-  },
+const pizzasKurinoeFeleAndShampiyoniiList = [
   {
     name: 'Пицца с куриным филе и шампиньонами (1)',
     img: pizzaFile1,
@@ -120,6 +96,9 @@ const pizzasList = [
     name: 'Пицца с куриным филе и шампиньонами (6)',
     img: pizzaFile6,
   },
+]
+
+const pizzasKuriceyAndGribamiList = [
   {
     name: 'Пицца с курицей и грибами (1)',
     img: pizzaKur1,
@@ -146,7 +125,34 @@ const pizzasList = [
   },
 ]
 
-const varenikiList = [
+const pizzasMyasnoeAssortiList = [
+  {
+    name: 'Пицца мясное ассорти с шампиньонами (1)',
+    img: pizzaMeat1,
+  },
+  {
+    name: 'Пицца мясное ассорти с шампиньонами (2)',
+    img: pizzaMeat2,
+  },
+  {
+    name: 'Пицца мясное ассорти с шампиньонами (3)',
+    img: pizzaMeat3,
+  },
+  {
+    name: 'Пицца мясное ассорти с шампиньонами (4)',
+    img: pizzaMeat4,
+  },
+  {
+    name: 'Пицца мясное ассорти с шампиньонами (5)',
+    img: pizzaMeat5,
+  },
+  {
+    name: 'Пицца мясное ассорти с шампиньонами (6)',
+    img: pizzaMeat6,
+  },
+]
+
+const varenikiTvorogList = [
   {
     name: 'Вареники с творогом (1)',
     img: varenik1,
@@ -161,7 +167,7 @@ const varenikiList = [
   },
 ]
 
-const meatsList = [
+const lyulyaKebabList = [
   {
     name: 'Люля-кебаб (1)',
     img: kebab1,
@@ -216,11 +222,60 @@ const oilList = [
 ]
 
 const categoriesList = [
-  { title: 'Бургеры', category: burgersList },
-  { title: 'Пицца', category: pizzasList },
-  { title: 'Вареники', category: varenikiList },
-  { title: 'Мясные изделия', category: meatsList },
-  { title: 'Масло', category: oilList },
+  {
+    title: 'Бургеры',
+    category: [
+      {
+        underCategoryTitle: 'С говяжьей котлетой',
+        underCategoryList: burgersGovyadinaList,
+      },
+    ],
+  },
+  {
+    title: 'Пицца',
+    category: [
+      {
+        underCategoryTitle: 'Мясное ассорти с шампиньонами',
+        underCategoryList: pizzasMyasnoeAssortiList,
+      },
+      {
+        underCategoryTitle: 'С куриным филе и шампиньонами',
+        underCategoryList: pizzasKurinoeFeleAndShampiyoniiList,
+      },
+      {
+        underCategoryTitle: 'С курицей и грибами',
+        underCategoryList: pizzasKuriceyAndGribamiList,
+      },
+    ],
+  },
+  {
+    title: 'Вареники',
+    category: [
+      {
+        underCategoryTitle: 'Вареники с творогом',
+        underCategoryList: varenikiTvorogList,
+      },
+    ],
+  },
+  {
+    title: 'Мясные изделия',
+    category: [
+      {
+        underCategoryTitle: 'Люля кебаб',
+        underCategoryList: lyulyaKebabList,
+      },
+    ],
+  },
+
+  {
+    title: 'Масло',
+    category: [
+      {
+        underCategoryTitle: 'Сливочное масло',
+        underCategoryList: oilList,
+      },
+    ],
+  },
 ]
 
 const Container = styled.div`
@@ -301,24 +356,45 @@ const Food = () => {
           return (
             <div style={{ marginBottom: 40 }}>
               <h2 style={{ marginBottom: 20 }}>{obj.title}</h2>
-              <FoodList>
-                {obj.category.map((food) => {
-                  return (
-                    <div onClick={() => handleModal(food.img)} style={{ width: 300 }}>
-                      <div style={{ height: 200, overflow: 'hidden' }}>
-                        <ProgressiveImage
-                          loading="lazy"
-                          src={food.img}
-                          placeholderSrc={placeholderImageSrc}
-                          alt={food.name}
-                        />
-                        {/* <FoodImage loading="lazy" src={food.img} alt="Еда" /> */}
-                      </div>
-                      <ImgName>{food.name}</ImgName>
-                    </div>
-                  )
-                })}
-              </FoodList>
+              {obj.category.map((food) => {
+                return (
+                  <>
+                    <p
+                      style={{
+                        display: 'inline-block',
+                        backgroundColor: 'rgb(154 130 130 / 10%)',
+                        marginBottom: 30,
+                        marginTop: 20,
+                        color: '#393939',
+                        fontWeight: 300,
+                        fontSize: 20,
+                        padding: '10px 5px',
+                        borderRadius: 10,
+                        boxShadow: 'rgba(100, 100, 111, 0.4) 0px 7px 29px 0px',
+                      }}
+                    >
+                      {food.underCategoryTitle}
+                    </p>
+                    <FoodList>
+                      {food.underCategoryList.map((uncat) => {
+                        return (
+                          <div onClick={() => handleModal(uncat.img)} style={{ width: 300 }}>
+                            <div style={{ height: 200, overflow: 'hidden' }}>
+                              <ProgressiveImage
+                                loading="lazy"
+                                src={uncat.img}
+                                placeholderSrc={placeholderImageSrc}
+                                alt={uncat.name}
+                              />
+                            </div>
+                            {/* <ImgName>{uncat.name}</ImgName> */}
+                          </div>
+                        )
+                      })}
+                    </FoodList>
+                  </>
+                )
+              })}
             </div>
           )
         })}
