@@ -42,6 +42,7 @@ import kebab5 from './../../assets/food/Люля-кебаб (5).jpg'
 import kebab6 from './../../assets/food/Люля-кебаб (6).jpg'
 import kebab7 from './../../assets/food/Люля-кебаб (7).jpg'
 import kebab8 from './../../assets/food/Люля-кебаб (8).jpg'
+import { useState } from 'react'
 
 const burgersList = [
   {
@@ -233,6 +234,25 @@ const Container = styled.div`
   }
 `
 
+const Overlay = styled.div`
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgb(0 0 0 / 70%);
+  z-index: 999;
+`
+
+const Modal = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  // background: white;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+`
+
 const Title = styled.h1`
   margin-bottom: 20px;
 `
@@ -243,56 +263,67 @@ const FoodList = styled.div`
   row-gap: 40px;
 `
 
-const FoodImage = styled.img`
+const FullImg = styled.img`
   display: block;
-  max-width: 100%;
-  max-height: 200px;
-  border-radius: 5px;
-  object-fit: cover;
-  transform: scale(1);
-  transition: all 0.3s;
-
-  &:hover {
-    transform: scale(1.5);
-    transition: all 0.5s;
-    cursor: pointer;
-  }
+  border-radius: 10px;
 `
 const ImgName = styled.p`
   margin-top: 10px;
 `
 
 const Food = () => {
-  return (
-    <Container id="home">
-      <Title>Каталог продуктов:</Title>
+  const [isOpen, setIsOpen] = useState(false)
+  const [fullImage, setFullImage] = useState('')
 
-      {categoriesList.map((obj) => {
-        return (
-          <div style={{ marginBottom: 40 }}>
-            <h2 style={{ marginBottom: 20 }}>{obj.title}</h2>
-            <FoodList>
-              {obj.category.map((food) => {
-                return (
-                  <div style={{ width: 300 }}>
-                    <div style={{ height: 200, overflow: 'hidden' }}>
-                      <ProgressiveImage
-                        loading="lazy"
-                        src={food.img}
-                        placeholderSrc={placeholderImageSrc}
-                        alt={food.name}
-                      />
-                      {/* <FoodImage loading="lazy" src={food.img} alt="Еда" /> */}
+  const handleModal = (imgSrc) => {
+    setIsOpen(true)
+    setFullImage(imgSrc)
+  }
+
+  const closeModal = () => {
+    setIsOpen(false)
+  }
+
+  return (
+    <>
+      {isOpen && (
+        <>
+          <Overlay onClick={closeModal}></Overlay>
+          <Modal>
+            <FullImg src={fullImage} alt="pizzaMeat1" />
+          </Modal>
+        </>
+      )}
+      <Container id="home">
+        <Title>Каталог продуктов:</Title>
+
+        {categoriesList.map((obj) => {
+          return (
+            <div style={{ marginBottom: 40 }}>
+              <h2 style={{ marginBottom: 20 }}>{obj.title}</h2>
+              <FoodList>
+                {obj.category.map((food) => {
+                  return (
+                    <div onClick={() => handleModal(food.img)} style={{ width: 300 }}>
+                      <div style={{ height: 200, overflow: 'hidden' }}>
+                        <ProgressiveImage
+                          loading="lazy"
+                          src={food.img}
+                          placeholderSrc={placeholderImageSrc}
+                          alt={food.name}
+                        />
+                        {/* <FoodImage loading="lazy" src={food.img} alt="Еда" /> */}
+                      </div>
+                      <ImgName>{food.name}</ImgName>
                     </div>
-                    <ImgName>{food.name}</ImgName>
-                  </div>
-                )
-              })}
-            </FoodList>
-          </div>
-        )
-      })}
-    </Container>
+                  )
+                })}
+              </FoodList>
+            </div>
+          )
+        })}
+      </Container>
+    </>
   )
 }
 

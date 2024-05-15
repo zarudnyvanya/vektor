@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
+import placeholderImageSrc from './../../assets/imagePlaceholder.jpg'
+
 const FoodImage = styled.img`
+  position: relative;
   display: block;
   width: 300px;
   height: 200px;
@@ -9,6 +11,7 @@ const FoodImage = styled.img`
   object-fit: cover;
   transform: scale(1);
   transition: all 0.3s;
+  z-index: 2;
 
   &:hover {
     transform: scale(1.5);
@@ -18,26 +21,25 @@ const FoodImage = styled.img`
 `
 
 export const ProgressiveImage = ({ src, placeholderSrc, loading, alt }) => {
-  const [imageSrc, setImageSrc] = useState(placeholderSrc)
-
-  useEffect(() => {
-    const img = new Image()
-    img.src = src
-    img.onload = () => {
-      setImageSrc(src)
-    }
-  }, [])
-
   return (
-    <FoodImage
-      style={
-        imageSrc === placeholderSrc
-          ? { filter: 'blur(10px)', width: 300, height: 200 }
-          : { filter: 'blur(0)', width: 300, height: 200 }
-      }
-      src={imageSrc}
-      loading={loading}
-      alt={alt}
-    />
+    <div style={{ position: 'relative' }}>
+      <div
+        style={{
+          position: 'absolute',
+          zIndex: 1,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          top: 0,
+          backgroundColor: 'gray',
+          backgroundImage: `url(${placeholderImageSrc})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          filter: 'blur(6px)',
+        }}
+      ></div>
+      <FoodImage width={300} height={200} loading="lazy" src={src} alt={alt} />
+    </div>
   )
 }
