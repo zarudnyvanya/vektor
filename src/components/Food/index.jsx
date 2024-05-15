@@ -42,6 +42,12 @@ import kebab5 from './../../assets/food/Люля-кебаб (5).jpg'
 import kebab6 from './../../assets/food/Люля-кебаб (6).jpg'
 import kebab7 from './../../assets/food/Люля-кебаб (7).jpg'
 import kebab8 from './../../assets/food/Люля-кебаб (8).jpg'
+
+import maslo1 from './../../assets/food/масло (1).jpg'
+import maslo2 from './../../assets/food/масло (2).jpg'
+import maslo3 from './../../assets/food/масло (3).jpg'
+import maslo4 from './../../assets/food/масло (4).jpg'
+
 import { useState } from 'react'
 
 const burgersGovyadinaList = [
@@ -205,19 +211,19 @@ const lyulyaKebabList = [
 const oilList = [
   {
     name: 'eda',
-    img: './29.jpg',
+    img: maslo1,
   },
   {
     name: 'eda',
-    img: './30.jpg',
+    img: maslo2,
   },
   {
     name: 'eda',
-    img: './31.jpg',
+    img: maslo3,
   },
   {
     name: 'eda',
-    img: './32.jpg',
+    img: maslo4,
   },
 ]
 
