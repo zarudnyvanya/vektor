@@ -128,7 +128,7 @@ const Services = () => {
       scrollTrigger: {
         trigger: document.getElementById('services'),
 
-        start: 'top top+=80',
+        start: 'top top+=40',
 
         end: 'bottom bottom-=300',
 
@@ -162,9 +162,9 @@ const Services = () => {
           {
             x: -300,
             opacity: 0,
-            duration: 10,
+            duration: 2,
 
-            ease: 'power2.in',
+            ease: 'circ',
             scrollTrigger: {
               id: `section-${index + 1}`,
               trigger: el,
@@ -180,7 +180,7 @@ const Services = () => {
           .to(el.childNodes[1], {
             transform: 'scale(0)',
 
-            ease: 'power2.in',
+            ease: 'power1',
 
             scrollTrigger: {
               id: `section-${index + 1}`,
