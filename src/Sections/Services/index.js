@@ -164,7 +164,7 @@ const Services = () => {
             opacity: 0,
             duration: 10,
 
-            ease: 'circ',
+            ease: 'power2.in',
             scrollTrigger: {
               id: `section-${index + 1}`,
               trigger: el,
@@ -180,7 +180,7 @@ const Services = () => {
           .to(el.childNodes[1], {
             transform: 'scale(0)',
 
-            ease: 'circ',
+            ease: 'power2.in',
 
             scrollTrigger: {
               id: `section-${index + 1}`,
@@ -201,7 +201,7 @@ const Services = () => {
 
               duration: 2,
 
-              ease: 'power2',
+              ease: 'power2.in',
               scrollTrigger: {
                 id: `section-${index + 1}`,
                 trigger: el,
@@ -220,7 +220,7 @@ const Services = () => {
             {
               opacity: 0,
 
-              ease: 'power2',
+              ease: 'power2.in',
               scrollTrigger: {
                 id: `section-${index + 1}`,
                 trigger: el,
@@ -239,7 +239,7 @@ const Services = () => {
             opacity: 0,
             duration: 2,
 
-            ease: 'power2',
+            ease: 'power2.in',
             scrollTrigger: {
               id: `section-${index + 1}`,
               trigger: el,
@@ -255,7 +255,7 @@ const Services = () => {
           .to(el.childNodes[1], {
             transform: 'scale(0)',
 
-            ease: 'power2.inOut',
+            ease: 'power2.in',
 
             scrollTrigger: {
               id: `section-${index + 1}`,
@@ -276,7 +276,7 @@ const Services = () => {
 
               duration: 2,
 
-              ease: 'power2',
+              ease: 'power2.in',
               scrollTrigger: {
                 id: `section-${index + 1}`,
                 trigger: el,
@@ -295,7 +295,7 @@ const Services = () => {
             {
               opacity: 0,
 
-              ease: 'power2',
+              ease: 'power2.in',
               scrollTrigger: {
                 id: `section-${index + 1}`,
                 trigger: el,
