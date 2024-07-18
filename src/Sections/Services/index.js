@@ -128,9 +128,9 @@ const Services = () => {
       scrollTrigger: {
         trigger: document.getElementById('services'),
 
-        start: 'top top+=200',
+        start: 'top top+=80',
 
-        end: 'bottom bottom',
+        end: 'bottom bottom-=300',
 
         pin: element,
         pinReparent: true,
@@ -138,9 +138,8 @@ const Services = () => {
     })
     t1.fromTo(
       document.getElementById('line'),
-
       {
-        height: '15rem',
+        height: '20rem',
       },
       {
         height: '3rem',
@@ -163,9 +162,9 @@ const Services = () => {
           {
             x: -300,
             opacity: 0,
-            duration: 2,
+            duration: 10,
 
-            ease: 'power2',
+            ease: 'circ',
             scrollTrigger: {
               id: `section-${index + 1}`,
               trigger: el,
@@ -181,7 +180,7 @@ const Services = () => {
           .to(el.childNodes[1], {
             transform: 'scale(0)',
 
-            ease: 'power2.inOut',
+            ease: 'circ',
 
             scrollTrigger: {
               id: `section-${index + 1}`,
@@ -346,11 +345,13 @@ const Services = () => {
           topic="Команда"
           title={<h1>Команда профессионалов</h1>}
           subText={
-            <h5>
-              Вы всегда будете в курсе любых изменения цен, условий поставки или остатков на складе,
-              чтобы лучше планировать свои расходы. <br /> Купим, продадим и доставим в кратчайшие
-              сроки
-            </h5>
+            <>
+              <h5>
+                Вы всегда будете в курсе любых изменения цен, условий поставки или остатков на
+                складе, чтобы лучше планировать свои расходы.
+              </h5>
+              <h5>Купим, продадим и доставим в кратчайшие сроки</h5>
+            </>
           }
         />
         <OBJ>{/* <img src={Cone} alt="Cone Object" width="400" height="400" /> */}</OBJ>

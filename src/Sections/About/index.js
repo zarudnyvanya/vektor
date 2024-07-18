@@ -5,9 +5,9 @@ import human from '../../assets/human.svg'
 import hand from '../../assets/hand.svg'
 
 const move = keyframes`
-0% { transform: translateY(-5px)         }
-    50% { transform: translateY(10px) translateX(10px)        }
-    100% { transform: translateY(-5px)         }
+0% { transform: translateY(-10px)         }
+    50% { transform: translateY(0px) translateX(20px)        }
+    100% { transform: translateY(-10px)         }
 `
 
 const AboutSection = styled.section`

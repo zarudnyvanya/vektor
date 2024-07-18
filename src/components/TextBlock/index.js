@@ -50,6 +50,7 @@ const Title = styled.div`
   padding: 0.5rem 0;
   @media only Screen and (max-width: 48em) {
     font-size: calc(1rem + 1.5vw);
+    text-align: center;
   }
 `
 
@@ -58,6 +59,14 @@ const SubText = styled.div`
   color: var(--nav2);
   @media only Screen and (max-width: 48em) {
     font-size: calc(0.5rem + 1vw);
+
+    ul {
+      margin: 0 auto;
+    }
+
+    h5 {
+      text-align: center;
+    }
   }
 `
 
